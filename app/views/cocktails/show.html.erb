@@ -1,8 +1,6 @@
 <h1>cocktail show page</h1>
 
 
-<p>There should be a way to delete a dose on this page...</p>
-
 <h2><%= @cocktail.name %></h2>
 <% @cocktail.doses.each do |dose| %>
   <p><%= dose.description %>  |  <%= dose.ingredient.name %>  |  
@@ -15,5 +13,16 @@
 <%#= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail)  %>
 <%#= image_tag @cocktail.photo, alt: "alttext" %>
 
+
 <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+
+<% @cocktail.reviews.each do |review| %>
+  <p><%= review.rating %> Stars</p>
+  <p><%= review.comment %>
+    <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-minus-circle"></i>
+    <% end %>
+  </p>
+<% end %>
+
 <%= render "reviews/new", cocktail: @cocktail, review: @review %>
