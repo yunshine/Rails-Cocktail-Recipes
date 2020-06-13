@@ -1,8 +1,13 @@
 <h1>cocktail show page</h1>
-<p>Do I have access to doses/ingredients and reviews on this page?</p>
 
-<p>Make a button to go to new dose page...</p>
 
 <p>There should be a way to delete a dose on this page...</p>
 
-<%= @cocktail.name %>
+<h2><%= @cocktail.name %></h2>
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %> | <%= dose.ingredient.name %></p>
+<% end %>
+
+<%= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail)  %>
+<%#= image_tag @cocktail.photo, alt: "alttext" %>
+
