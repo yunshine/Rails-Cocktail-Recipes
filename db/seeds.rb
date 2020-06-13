@@ -10,13 +10,19 @@ require 'json'
 require 'open-uri'
 
 puts "Destroying all ingredients..."
-Ingredient.destroy_all if Rails.env.development?
+# Ingredient.destroy_all if Rails.env.development?
+Ingredient.destroy_all
 
 puts "Creating ingredients..."
 Ingredient.create(name: "Lemon")
+Ingredient.create(name: "Lime")
 Ingredient.create(name: "Ice")
+Ingredient.create(name: "White Rum")
+Ingredient.create(name: "Club Soda")
 Ingredient.create(name: "Mint Leaves")
-puts "there are three ingredients now..."
+Ingredient.create(name: "Ginger Beer")
+Ingredient.create(name: "Coconut Cream")
+puts "there are eight ingredients now..."
 
 puts "Creating ingredients from JSON..."
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
