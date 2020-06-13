@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "cocktails#index"
 
   # get "cocktails/:id", to: "cocktails#show", as: :cocktail
-  resources :cocktails, only: [:index, :show]
+  resources :cocktails, only: [:index, :show, :new, :create]
 end
