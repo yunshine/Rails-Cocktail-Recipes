@@ -5,3 +5,18 @@
     <a class="btn btn-primary" href="#">Create a New Recipe</a>
   </div>
 </div>
+
+<div class="cocktail-cards container">
+  <% @cocktails.each do |cocktail| %>
+  <div class="card-trip">
+    <%= image_tag cocktail.photo, alt: "alttext" %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= cocktail.name %></h2>
+        <p><%= cocktail.description %></p>
+      </div>
+<!--       <h2 class="card-trip-pricing"><%#= cocktail.rating %></h2> -->
+    </div>
+  </div>
+  <% end %>
+</div>
