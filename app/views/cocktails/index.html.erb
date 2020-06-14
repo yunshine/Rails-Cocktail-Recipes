@@ -15,7 +15,11 @@
         <h2><%= cocktail.name %></h2>
         <p><%= cocktail.description %></p>
       </div>
-<!--       <h2 class="card-trip-pricing"><%#= cocktail.rating %></h2> -->
+      <% unless cocktail.reviews == [] %>
+      <h2 class="card-trip-pricing"><%= cocktail.reviews.first.rating %></h2>
+      <% else %>
+      <h2>No Reviews</h2>
+      <% end %>
     </div>
   </div>
   <% end %>
