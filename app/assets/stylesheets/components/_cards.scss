@@ -7,7 +7,7 @@
 
 .card-trip {
   overflow: hidden;
-  background: #f8f8f8;
+  background: #f0efed;
   box-shadow: 0 0 12px rgba(80,80,80,0.9);
   border-radius: 4px;
 }
@@ -24,6 +24,7 @@
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+  color: #101010;
 }
 
 .card-trip p {
@@ -31,14 +32,19 @@
   font-size: 14px;
   opacity: .85;
   margin: 0;
+  color: #101010;
 }
 
+.card-trip h6 {
+  color: #101010;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  background: #f0efed;
   // position: relative;
 }
 
