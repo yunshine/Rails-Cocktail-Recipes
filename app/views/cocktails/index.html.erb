@@ -16,9 +16,10 @@
         <p><%= cocktail.description %></p>
       </div>
       <% unless cocktail.reviews == [] %>
-      <h2 class="card-trip-pricing"><%= cocktail.reviews.first.rating %></h2>
+      <h6 class="text-center"><%= cocktail.reviews.first.rating %></h6>
+        <!-- <i class="far fa-star"></i> -->
       <% else %>
-      <h2>No Reviews</h2>
+      <h6 class="text-center">No Ratings Available</h6>
       <% end %>
     </div>
   </div>

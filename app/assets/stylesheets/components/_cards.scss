@@ -1,24 +1,35 @@
+.cocktail-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 16px
+}
+
 .card-trip {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: #f8f8f8;
+  box-shadow: 0 0 12px rgba(80,80,80,0.9);
+  border-radius: 4px;
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
+  padding: 16px 16px 0px 16px;
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-family: 'PT Serif', 'serif';
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-trip p {
-  font-size: 12px;
-  opacity: .7;
+  font-family: 'PT Serif', 'serif';
+  font-size: 14px;
+  opacity: .85;
   margin: 0;
 }
 
@@ -28,12 +39,12 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  // position: relative;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
