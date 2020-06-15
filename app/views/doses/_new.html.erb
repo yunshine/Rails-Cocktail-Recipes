@@ -1,8 +1,7 @@
-<h3 class="yellow-font">Form to create a new dose</h3>
+  <h4 class="yellow-font bold-font text-center ">Add an Ingredient</h4>
 
-<%= simple_form_for [cocktail, dose] do |f| %>
-  <%= f.association :ingredient, class: 'select2', input_html: { class: "beautiful-dropdown, select2" }, include_hidden: false, collection: Ingredient.order('name ASC') %>
-  <%= f.input :description %>
-  <%= f.button :submit, class: 'btn btn-cocktail' %>
-<% end %>
-  
+  <%= simple_form_for [cocktail, dose] do |f| %>
+    <%= f.association :ingredient, class: 'select2', input_html: { class: "beautiful-dropdown, select2" }, include_hidden: false, collection: Ingredient.order('name ASC') %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: 'btn btn-cocktail' %>
+  <% end %>
