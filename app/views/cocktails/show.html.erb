@@ -1,24 +1,30 @@
-<div class="container test-container">
+<div class="container test-container my-3">
   <div class="name">
-    <h1 class="yellow-font"><%= @cocktail.name %></h1>
+    <h1 class="yellow-font bold-font"><%= @cocktail.name %></h1>
   </div>
   
   <div class="test-container">
     <div class="row">
       <div class="col-12 col-lg-4 photo-and-description-div">
         <%= image_tag @cocktail.photo, class: "resized-photo", alt: "photo of cocktail" %>
-        <h5 class="yellow-font"><%= @cocktail.description %></h5>
+        <h5 class="yellow-font my-3"><%= @cocktail.description %></h5>
       </div>
 
       <div class="col-12 col-lg-8 ingredients-div test-container">
-        <h4 class="yellow-font">Ingredients</h4>
+        <h3 class="yellow-font bold-font mb-3">Ingredients</h3>
         <% @cocktail.doses.each do |dose| %>
-          <p class="yellow-font"><%= dose.description %>  |  <%= dose.ingredient.name %>  |  
-            <%= link_to dose_path(dose), method: :delete,  class:"yellow-font", data: { confirm: "Are you sure?" } do %>
+        <div class="d-flex justify-content-between lighter-background my-2">
+            <div><h6 class="yellow-font my-2"><%= dose.ingredient.name %>&nbsp;&nbsp;&nbsp;&nbsp; (<%= dose.description %>)</h6></div>
+            <div><%= link_to dose_path(dose), method: :delete,  class:"yellow-font my-1", data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-minus-circle yellow-font"></i>
-            <% end %>
-          </p>
+              <% end %>
+            </div>  
+        </div>
         <% end %>
+        
+
+
+
       </div>
     </div>
 
