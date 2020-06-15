@@ -1,26 +1,53 @@
-<h1>cocktail show page</h1>
+<div class="container test-container">
+  <div class="name">
+    <h1 class="yellow-font"><%= @cocktail.name %></h1>
+  </div>
+  
+  <div class="test-container">
+    <div class="row">
+      <div class="col-12 col-lg-4 photo-and-description-div">
+        <%= image_tag @cocktail.photo, class: "resized-photo", alt: "photo of cocktail" %>
+        <h5 class="yellow-font"><%= @cocktail.description %></h5>
+      </div>
+
+      <div class="col-12 col-lg-8 ingredients-div test-container">
+        <h4 class="yellow-font">Ingredients</h4>
+        <% @cocktail.doses.each do |dose| %>
+          <p class="yellow-font"><%= dose.description %>  |  <%= dose.ingredient.name %>  |  
+            <%= link_to dose_path(dose), method: :delete,  class:"yellow-font", data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-minus-circle yellow-font"></i>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+    </div>
 
 
-<h2><%= @cocktail.name %></h2>
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %>  |  <%= dose.ingredient.name %>  |  
-    <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fas fa-minus-circle"></i>
-    <% end %>
-  </p>
-<% end %>
+  </div>
+
+</div>
+
+
+
+
+
+
+
 
 <%#= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail)  %>
 <%#= image_tag @cocktail.photo, alt: "alttext" %>
-
+<br>
+<br>
+<br>
+<br>
 
 <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
 
 <% @cocktail.reviews.each do |review| %>
-  <p><%= review.rating %> Stars</p>
-  <p><%= review.comment %>
-    <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fas fa-minus-circle"></i>
+  <p class="yellow-font"><%= review.rating %> Stars</p>
+  <p class="yellow-font"><%= review.comment %>
+    <%= link_to review_path(review),  class:"yellow-font", method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-minus-circle yellow-font"></i>
     <% end %>
   </p>
 <% end %>
