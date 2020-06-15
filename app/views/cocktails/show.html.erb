@@ -36,7 +36,7 @@
           <h4 class="yellow-font bold-font text-center ingredient-h4">Comments & Reviews</h4>
         <% @cocktail.reviews.each do |review| %>
         <div class="d-flex justify-content-center m-3 darker-background">
-            <div><p class="yellow-font m-3"><%= review.comment %></p></div>
+            <div><h4 class="yellow-font m-3"><%= review.comment %></h4></div>
             <%= link_to review_path(review),  class:"yellow-font m-3", method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-minus-circle yellow-font"></i>
             <% end %>
