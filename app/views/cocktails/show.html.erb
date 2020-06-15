@@ -7,7 +7,7 @@
           <h1 class="yellow-font bold-font"><%= @cocktail.name %></h1>
         </div>
         <%= image_tag @cocktail.photo, class: "resized-photo", alt: "photo of cocktail" %>
-        <h5 class="yellow-font my-3"><%= @cocktail.description %></h5>
+        <h5 class="yellow-font my-3 text-center"><%= @cocktail.description %></h5>
       </div>
 
       <div class="col-12 col-lg-7 ingredients-div">
@@ -30,49 +30,24 @@
 
   <div class="">
     <div class="row">
-      <div class="col-12 col-lg-3"></div>
-      <div class="col-12 col-lg-12 reviews-div">
+      <div class="col-12 col-lg-2"></div>
+      <div class="col-12 col-lg-8 reviews-div">
         <div>
-          <p>testing</p>
-          <p>testing</p>
-          <p>testing</p>
+          <h4 class="yellow-font bold-font text-center ingredient-h4">Comments & Reviews</h4>
+        <% @cocktail.reviews.each do |review| %>
+        <div class="d-flex justify-content-center m-3 darker-background">
+            <div><p class="yellow-font m-3"><%= review.comment %></p></div>
+            <%= link_to review_path(review),  class:"yellow-font m-3", method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-minus-circle yellow-font"></i>
+            <% end %>
         </div>
-      </div>
-      <div class="col-12 col-lg-3"></div>
-    </div>
-  </div>
+        <% end %>
+        </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-3"></div>
-      <div class="col-12 col-lg-6">
-        <div class="my-3">
+       <div class="my-3">
           <%= render "reviews/new", cocktail: @cocktail, review: @review %>
         </div>
       </div>
-      <div class="col-12 col-lg-3"></div>
+      <div class="col-12 col-lg-2"></div>
     </div>
-  </div>
 </div>
-
-
-
-
-
-
-<%#= link_to "Add an Ingredient", new_cocktail_dose_path(@cocktail)  %>
-<%#= image_tag @cocktail.photo, alt: "alttext" %>
-<br>
-<br>
-<br>
-<br>
-
-
-<% @cocktail.reviews.each do |review| %>
-  <p class="yellow-font"><%= review.rating %> Stars</p>
-  <p class="yellow-font"><%= review.comment %>
-    <%= link_to review_path(review),  class:"yellow-font", method: :delete, data: { confirm: "Are you sure?" } do %>
-      <i class="fas fa-minus-circle yellow-font"></i>
-    <% end %>
-  </p>
-<% end %>
