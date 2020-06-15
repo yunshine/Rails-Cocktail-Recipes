@@ -2,7 +2,7 @@
   
   <div class="">
     <div class="row">
-      <div class="col-12 col-lg-4 photo-and-description-div">
+      <div class="col-12 col-lg-5 photo-and-description-div">
         <div class="name">
           <h1 class="yellow-font bold-font"><%= @cocktail.name %></h1>
         </div>
@@ -10,7 +10,7 @@
         <h5 class="yellow-font my-3"><%= @cocktail.description %></h5>
       </div>
 
-      <div class="col-12 col-lg-8 ingredients-div">
+      <div class="col-12 col-lg-7 ingredients-div">
         <h4 class="yellow-font bold-font text-center ingredient-h4">Ingredients</h4>
         <% @cocktail.doses.each do |dose| %>
         <div class="d-flex justify-content-between lighter-background m-3">
@@ -46,7 +46,6 @@
 <br>
 <br>
 
-<%= render "doses/new", cocktail: @cocktail, dose: @dose %>
 
 <% @cocktail.reviews.each do |review| %>
   <p class="yellow-font"><%= review.rating %> Stars</p>
