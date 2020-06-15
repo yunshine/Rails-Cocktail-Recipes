@@ -13,7 +13,7 @@
       <div class="col-12 col-lg-8 ingredients-div">
         <h4 class="yellow-font bold-font text-center">Ingredients</h4>
         <% @cocktail.doses.each do |dose| %>
-        <div class="d-flex justify-content-between lighter-background my-2">
+        <div class="d-flex justify-content-between lighter-background m-3">
             <div><h6 class="yellow-font m-3"><%= dose.ingredient.name %>&nbsp;&nbsp;&nbsp;&nbsp; (<%= dose.description %>)</h6></div>
             <div><%= link_to dose_path(dose), method: :delete,  class:"", data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-minus-circle yellow-font m-3"></i>
