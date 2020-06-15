@@ -1,22 +1,22 @@
-<div class="container test-container my-3">
+<div class="container my-3">
   <div class="name">
     <h1 class="yellow-font bold-font"><%= @cocktail.name %></h1>
   </div>
   
-  <div class="test-container">
+  <div class="">
     <div class="row">
       <div class="col-12 col-lg-4 photo-and-description-div">
         <%= image_tag @cocktail.photo, class: "resized-photo", alt: "photo of cocktail" %>
         <h5 class="yellow-font my-3"><%= @cocktail.description %></h5>
       </div>
 
-      <div class="col-12 col-lg-8 ingredients-div test-container">
-        <h3 class="yellow-font bold-font mb-3">Ingredients</h3>
+      <div class="col-12 col-lg-8 ingredients-div">
+        <h4 class="yellow-font bold-font text-center">Ingredients</h4>
         <% @cocktail.doses.each do |dose| %>
         <div class="d-flex justify-content-between lighter-background my-2">
-            <div><h6 class="yellow-font my-2"><%= dose.ingredient.name %>&nbsp;&nbsp;&nbsp;&nbsp; (<%= dose.description %>)</h6></div>
-            <div><%= link_to dose_path(dose), method: :delete,  class:"yellow-font my-1", data: { confirm: "Are you sure?" } do %>
-              <i class="fas fa-minus-circle yellow-font"></i>
+            <div><h6 class="yellow-font m-3"><%= dose.ingredient.name %>&nbsp;&nbsp;&nbsp;&nbsp; (<%= dose.description %>)</h6></div>
+            <div><%= link_to dose_path(dose), method: :delete,  class:"", data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-minus-circle yellow-font m-3"></i>
               <% end %>
             </div>  
         </div>
