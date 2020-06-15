@@ -1,9 +1,9 @@
-<h3>Form to create a new review</h3>
+<h4 class="yellow-font bold-font text-center ">Write a New Comment or Review About this Cocktail</h4>
 
 <%= simple_form_for [cocktail, review] do |f| %>
   <%#= f.input :rating, collection: 0..5 %>
-  <%= f.input :rating, input_html: { min: '0', step: '1' } %>
+  <%#= f.input :rating, input_html: { min: '0', step: '1' } %>
 
-  <%= f.input :comment %>
+  <%= f.input :comment, class: "label", label: "New comment or review" %>
   <%= f.submit class: "btn btn-primary"%>
 <% end %>
