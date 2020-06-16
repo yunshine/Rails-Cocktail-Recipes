@@ -31,3 +31,21 @@
   background-color: #d9d2be;
   color: #30333c;
 }
+
+.upload-photo {
+  border: 1px solid #d3d3d3;
+  // padding: 16px 24px;
+  cursor: pointer;
+  // background: white;
+  border-radius: 2px;
+  background-color: #bfb7a3;
+  border-radius: 4px;
+  color: #ffffff !important;
+  transition: 0.2s;
+}
+
+.upload-photo:hover {
+  background-color: #d9d2be;
+  border-radius: 4px;
+  color: #30333c !important;
+}

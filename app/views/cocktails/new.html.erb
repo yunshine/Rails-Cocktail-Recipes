@@ -7,7 +7,9 @@
         <%= simple_form_for @cocktail do |f| %>
           <%= f.input :name,  class:"yellow-font", label: "Name of New Cocktail" %>
           <%= f.input :description, label: "Cocktail Description" %>
-          <%= f.input :photo, as: :file, label: "Upload a Photo" %>
+          <%#= f.input :photo, as: :file, label: "Upload a Photo", input_html: { class: 'hidden'} %>
+          <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'my-3 btn upload-photo'}, label: 'Upload a Photo' %>
+
           <%#= f.input :photo, as: :file %>
           <%= f.button :submit, class: 'btn btn-cocktail' %>
         <% end %>
