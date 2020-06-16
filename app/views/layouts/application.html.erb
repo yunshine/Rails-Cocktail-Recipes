@@ -14,13 +14,22 @@
 
   <body>
     <div class="cocktail-navbar">
-    <div>
-      <%= link_to root_path do %>
-        <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1592208600/Photography_qtz3tc.png", class: "cocktail-logo" %>
-      <% end %>
-    </div>
-        <!-- SEARCH BAR WILL GO HERE with no margins or padding...-->
-
+      <div>
+        <%= link_to root_path do %>
+          <%= image_tag "https://res.cloudinary.com/deyqjsowe/image/upload/v1592208600/Photography_qtz3tc.png", class: "cocktail-logo" %>
+        <% end %>
+      </div>
+          <!-- SEARCH BAR WILL GO HERE with no margins or padding...-->
+      <div>
+        <%= form_tag cocktails_path, class: "", method: :get do %>
+        <div class="d-flex">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "nav-search-field", placeholder: "Find a Cocktail" %>
+          <%= submit_tag "Search", class: "btn btn-cocktail-search" %>
+        <% end %>
+        </div>
+      </div>
     </div>
     <%= yield %>
   </body>

@@ -16,3 +16,18 @@
   justify-content: center;
   align-items: end;
 }
+
+.btn-cocktail-search {
+  background-color: #bfb7a3;
+  border-radius: 0px 4px 4px 0px;
+  color: #ffffff;
+  transition: 0.2s;
+  margin-left: 0px;
+  margin-right: 16px;
+  border: 0px solid white;
+}
+
+.btn-cocktail-search:hover {
+  background-color: #d9d2be;
+  color: #30333c;
+}
