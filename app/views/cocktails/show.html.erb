@@ -8,6 +8,9 @@
         </div>
         <%= image_tag @cocktail.photo, class: "resized-photo", alt: "photo of cocktail" %>
         <h5 class="yellow-font my-3 text-center"><%= @cocktail.description %></h5>
+        <div class="text-center">
+          <%= link_to "Delete this Cocktail", cocktail_path(@cocktail), method: :delete,  class:"btn btn-cocktail", data: { confirm: "Are you sure?" } %>
+        </div>  
       </div>
 
       <div class="col-12 col-lg-7 ingredients-div">
